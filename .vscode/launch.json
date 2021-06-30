@@ -5,11 +5,21 @@
     "version": "0.2.0",
     "compounds": [
         {
-           "name": "Full-Stack",
-           "configurations": ["Launch Program", "Launch Edge against localhost"],
-           "preLaunchTask": "Build"
+            "name": "Full-Stack-Edge",
+            "configurations": [
+                "Launch Program",
+                "Launch Edge against localhost"
+            ],
+            "preLaunchTask": "Build"
+        },{
+            "name": "Full-Stack-Chrome",
+            "configurations": [
+                "Launch Program",
+                "Launch Chrome against localhost"
+            ],
+            "preLaunchTask": "Build"
         }
-     ],
+    ],
     "configurations": [
         {
             "type": "node",
@@ -18,14 +28,19 @@
             "skipFiles": ["<node_internals>/**"],
             "program": "${workspaceFolder}\\server.js"
           },
-          {
+        {
             "type": "edge",
             "request": "launch",
             "name": "Launch Edge against localhost",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}",
-
-            
+        },
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
         }
     ]
 }
