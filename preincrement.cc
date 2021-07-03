@@ -1,34 +1,15 @@
+// CPP program to demonstrate pre increment
+// operator.
 #include <node.h>
-
-namespace calculate {
-
+namespace calculate
+{
     using v8::FunctionCallbackInfo;
     using v8::Isolate;
     using v8::Local;
-    using v8::Object;
     using v8::Number;
+    using v8::Object;
     using v8::Value;
     using v8::String;
-    
-    void Method(const FunctionCallbackInfo<Value>&args){
-        
-        Isolate* isolate = args.GetIsolate();
-
-
-
-        int i;
-        double x = 4.12341, y = 200.12342;
-
-        for(i = 0; i <1000000; i++){
-            x += y;
-        }
-
-        auto total = Number::New(isolate, x);
-
-
-        args.GetReturnValue().Set(total);
-
-    }
 
     void Method2(const FunctionCallbackInfo<Value> &args)
     {
@@ -52,14 +33,14 @@ namespace calculate {
         // std::string total = ;
 
         args.GetReturnValue().Set(String::NewFromUtf8(
-                                      isolate, s3.c_str())
-                                      .ToLocalChecked());
+            isolate, s3.c_str()).ToLocalChecked());
     }
 
-    void Initialize(Local<Object> exports){
-        NODE_SET_METHOD(exports, "calc", Method);
+    void Initialize(Local<Object> exports)
+    {
         NODE_SET_METHOD(exports, "calc2", Method2);
     }
 
     NODE_MODULE(NODE_GYP_MODULE_NAME, Initialize);
 }
+

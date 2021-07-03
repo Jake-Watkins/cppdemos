@@ -8,7 +8,7 @@ import { NavBar } from "./shared/NavBar"
 export class Hello extends React.Component {
     render() {
         return (
-            <h1>Welcome to my website!!!!!</h1>
+            <h1>test</h1>
         );
     }
 }

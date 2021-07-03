@@ -1,5 +1,4 @@
-const calculate = require('./build/Release/calculate');
- console.log(calculate.calc());
+const demoapi = require('./api/demo');
 
 
 'use strict';
@@ -11,12 +10,8 @@ var app = express();
 var staticPath = path.join(__dirname, '/');
 app.use(express.static(staticPath));
 
-app.get('/myapicall', async (req, res) =>
-{
-    res.json({
-        "value":calculate.calc(), error:false
-    })
-})
+app.get('/api/myapicall', demoapi.demo1)
+app.get('/api/myapicall2', demoapi.demo2)
 
 // Allows you to set port in the project properties.
 app.set('port', process.env.PORT || 3000);
