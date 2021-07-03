@@ -2,7 +2,7 @@
     "targets": [
         {
             "target_name":"calculate",
-            "sources": ["calculate.cc"]
+            "sources": ["api/calculate.cc"]
         }
     ]
 } 
